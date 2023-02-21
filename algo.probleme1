@@ -1,0 +1,42 @@
+ALGORITHM problem 1 
+VAR
+   tab1 : ARRAY_OF INTEGER[5];
+   tab2 : ARRAY_OF INTEGER[5];
+   i,j : INTEGER;
+   a:BOOLEAN;
+   sum:INTEGER;
+
+BEGIN
+    sum:=0;
+   ok:=false;
+   FOR i FROM 0 TO 4 DO
+       Read(tab1[i]);// insert from user
+   END_FOR
+    FOR i FROM 0 TO 4 DO
+       Read(tab2[i]);// insert from user
+    END_FOR
+
+
+   FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+         ok:=false;
+    FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (tab1[i]=tab2[j])  THEN
+        ok:=true;
+        END_IF
+    END_FOR
+    IF (a=false) THEN
+     sum:=sum+tab1[i];
+   END_FOR
+   /////////////////////////////////////////////
+   FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+         ok:=false;
+    FOR j FROM 0 TO tab1.length-1 STEP 1  DO
+        IF (tab1[i]=tab2[j])  THEN
+        ok:=true;
+        END_IF
+    END_FOR
+    IF (a=false) THEN
+     sum:=sum+tab1[i];
+   END_FOR
+    write ("somme =",sum);
+END
